@@ -13,6 +13,7 @@ builder.Services.AddDbContext<DataContext>(opt =>
 
 builder.Services.AddCors();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +24,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors(c=>
+app.UseCors(c =>
 {
     c.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
 });
